@@ -11,6 +11,7 @@ class CustomRoundedButton extends StatelessWidget {
   String? iconImage;
   Color textColor;
   bool isOutlined;
+  double fontSize;
 
   CustomRoundedButton(
       {super.key,
@@ -21,7 +22,9 @@ class CustomRoundedButton extends StatelessWidget {
       this.bgColor = Colors.white,
       this.iconImage,
       this.textColor = Colors.black,
-      this.isOutlined = false});
+      this.isOutlined = false,
+      this.fontSize = 25
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +52,8 @@ class CustomRoundedButton extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
-                          color: AppColors.whiteColor),
+                          color: textColor
+                          ),
                     )))
                   ],
                 ),
@@ -58,8 +62,9 @@ class CustomRoundedButton extends StatelessWidget {
                 child: Text(text,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: AppColors.whiteColor)),
+                        fontSize: fontSize,
+                        color: textColor
+                        )),
               ),
       ),
     );

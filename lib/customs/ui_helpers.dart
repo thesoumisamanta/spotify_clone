@@ -11,10 +11,10 @@ InputDecoration customInputDecoration() => InputDecoration(
   filled: true,
   fillColor: AppColors.greyColor,
   enabledBorder: OutlineInputBorder(
-    borderRadius: BorderRadius.circular(11),
+    borderRadius: BorderRadius.circular(5),
   ),
   focusedBorder: OutlineInputBorder(
-    borderRadius: BorderRadius.circular(11),
+    borderRadius: BorderRadius.circular(5),
     borderSide: BorderSide(
       color: AppColors.greenColor
     )

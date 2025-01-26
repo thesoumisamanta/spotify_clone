@@ -21,6 +21,7 @@ Widget startPageWidgets(BuildContext context) => Container(
             CustomRoundedButton(
                 bgColor: AppColors.greenColor,
                 text: "Sign up free",
+                textColor: AppColors.darkBlackColor,
                 onTap: () {
                   Navigator.pushNamed(context, AppRoutes.signUp_page);
                 }),
@@ -28,6 +29,7 @@ Widget startPageWidgets(BuildContext context) => Container(
             CustomRoundedButton(
                 bgColor: AppColors.darkBlackColor,
                 text: "Continue with Google",
+                textColor: AppColors.whiteColor,
                 iconImage: "assets/logo/google.svg",
                 isOutlined: true,
                 onTap: () {}),
@@ -35,6 +37,7 @@ Widget startPageWidgets(BuildContext context) => Container(
             CustomRoundedButton(
                 bgColor: AppColors.darkBlackColor,
                 text: "Continue with Facebook",
+                textColor: AppColors.whiteColor,
                 iconImage: "assets/logo/facebook.svg",
                 isOutlined: true,
                 onTap: () {}),
@@ -42,6 +45,7 @@ Widget startPageWidgets(BuildContext context) => Container(
             CustomRoundedButton(
                 bgColor: AppColors.darkBlackColor,
                 text: "Continue with Apple",
+                textColor: AppColors.whiteColor,
                 iconImage: "assets/logo/apple.svg",
                 isOutlined: true,
                 onTap: () {}),
