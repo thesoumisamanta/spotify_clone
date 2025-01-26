@@ -12,17 +12,16 @@ class CustomRoundedButton extends StatelessWidget {
   Color textColor;
   bool isOutlined;
 
-  CustomRoundedButton({
-    super.key,
-    required this.onTap,
-    required this.text,
-    this.mWidth = 300,
-    this.mHeight = 50,
-    this.bgColor = Colors.white,
-    this.iconImage,
-    this.textColor = Colors.black,
-    this.isOutlined = false
-  });
+  CustomRoundedButton(
+      {super.key,
+      required this.onTap,
+      required this.text,
+      this.mWidth = 300,
+      this.mHeight = 50,
+      this.bgColor = Colors.white,
+      this.iconImage,
+      this.textColor = Colors.black,
+      this.isOutlined = false});
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +31,11 @@ class CustomRoundedButton extends StatelessWidget {
         height: mHeight,
         width: mWidth,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30), color: isOutlined ? Colors.transparent : bgColor,
+            borderRadius: BorderRadius.circular(30),
+            color: isOutlined ? Colors.transparent : bgColor,
             border: Border.all(
-              width: 1,
-              color: isOutlined ? AppColors.whiteColor : Colors.transparent
-            )
-            ),
+                width: 1,
+                color: isOutlined ? AppColors.whiteColor : Colors.transparent)),
         child: iconImage != null
             ? Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 11),
