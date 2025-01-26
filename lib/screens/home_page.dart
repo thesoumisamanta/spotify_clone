@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
               height: double.infinity,
               width: double.infinity,
             ),
-            startPageWidgets()
+            startPageWidgets(context)
           ],
         ),
       ),
