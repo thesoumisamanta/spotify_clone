@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
 
 Widget customSizedBox({
-  double mHeight = 12
+  double mHeight = 12,
+  double mWidth = 10
 }) => SizedBox(
   height: mHeight,
+  width: mWidth,
 );
 
 InputDecoration customInputDecoration() => InputDecoration(

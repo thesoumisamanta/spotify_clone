@@ -31,7 +31,7 @@ class SignupPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
-        child: signUpPageWidgetsOne()
+        child: signUpPageWidgetsFour()
       ),
     );
   }
