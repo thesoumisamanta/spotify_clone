@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:spotify_clone/customs/custom_rounded_button.dart';
 import 'package:spotify_clone/customs/custom_text.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
@@ -23,18 +25,7 @@ Widget signUpPageWidgetsOne() => Column(
           textColor: AppColors.whiteColor,
         ),
         ui_helpers.customSizedBox(mHeight: 35),
-        Center(
-            child: CustomRoundedButton(
-          onTap: () {
-            // Navigator.push(context, route)
-          },
-          text: "Next",
-          mHeight: 35,
-          mWidth: 70,
-          bgColor: AppColors.greyColor,
-          textColor: AppColors.darkBlackColor,
-          fontSize: 14,
-        ))
+        
       ],
     );
 
@@ -57,18 +48,7 @@ Widget signUpPageWidgetsTwo() => Column(
           textColor: AppColors.whiteColor,
         ),
         ui_helpers.customSizedBox(mHeight: 35),
-        Center(
-            child: CustomRoundedButton(
-          onTap: () {
-            // Navigator.push(context, route)
-          },
-          text: "Next",
-          mHeight: 35,
-          mWidth: 70,
-          bgColor: AppColors.greyColor,
-          textColor: AppColors.darkBlackColor,
-          fontSize: 14,
-        ))
+        
       ],
     );
 
@@ -114,22 +94,12 @@ Widget signUpPageWidgetsThree() => Column(
           ],
         ),
         ui_helpers.customSizedBox(mHeight: 35),
-        Center(
-            child: CustomRoundedButton(
-          onTap: () {
-            // Navigator.push(context, route)
-          },
-          text: "Next",
-          mHeight: 35,
-          mWidth: 70,
-          bgColor: AppColors.greyColor,
-          textColor: AppColors.darkBlackColor,
-          fontSize: 14,
-        ))
       ],
     );
 
-Widget signUpPageWidgetsFour() => Column(
+Widget signUpPageWidgetsFour({
+  required ValueChanged<bool?> onPP1Changed, required ValueChanged<bool?> onPP2Changed,
+}) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomText(
@@ -146,20 +116,52 @@ Widget signUpPageWidgetsFour() => Column(
             text: '  This appears on your spotify profile',
             fontSize: 8,
             textColor: AppColors.whiteColor),
-            ui_helpers.customSizedBox(mHeight: 25),
-            Divider(color: AppColors.greyColor,),
-            ui_helpers.customSizedBox(mHeight: 25),
-            CustomText(text: 'By tapping on “Create account”, you agree to the spotify Terms of Use. ', fontSize: 10, textColor: AppColors.whiteColor),
-            ui_helpers.customSizedBox(mHeight: 25),
-            CustomText(text: 'Terms of Use', fontSize: 10, textColor: AppColors.greenColor),
-            ui_helpers.customSizedBox(mHeight: 25),
-            CustomText(text: 'To learn more about how Spotify collect, uses, shares and protects your personal data, Please see the Spotify Privacy Policy.', fontSize: 10, textColor: AppColors.whiteColor),
-            ui_helpers.customSizedBox(mHeight: 25),
-            CustomText(text: 'Privacy Policy  ', fontSize: 10, textColor: AppColors.greenColor),
-            ui_helpers.customSizedBox(mHeight: 25),
-            CustomText(text: 'Please send me news and offers from Spotify.', fontSize: 10, textColor: AppColors.whiteColor),
-            RadioListTile.adaptive(value: false, groupValue: false, onChanged: (value){}),
-            ui_helpers.customSizedBox(mHeight: 25),
-            CustomText(text: 'Share my registration data with Spotify’s content providers for marketing purposes.', fontSize: 10, textColor: AppColors.whiteColor)
+        ui_helpers.customSizedBox(mHeight: 25),
+        Divider(
+          color: AppColors.greyColor,
+        ),
+        ui_helpers.customSizedBox(mHeight: 25),
+        CustomText(
+            text:
+                'By tapping on “Create account”, you agree to the spotify Terms of Use. ',
+            fontSize: 10,
+            textColor: AppColors.whiteColor),
+        ui_helpers.customSizedBox(mHeight: 25),
+        CustomText(
+            text: 'Terms of Use',
+            fontSize: 10,
+            textColor: AppColors.greenColor),
+        ui_helpers.customSizedBox(mHeight: 25),
+        CustomText(
+            text:
+                'To learn more about how Spotify collect, uses, shares and protects your personal data, Please see the Spotify Privacy Policy.',
+            fontSize: 10,
+            textColor: AppColors.whiteColor),
+        ui_helpers.customSizedBox(mHeight: 25),
+        CustomText(
+            text: 'Privacy Policy  ',
+            fontSize: 10,
+            textColor: AppColors.greenColor),
+        RadioListTile.adaptive(
+          controlAffinity: ListTileControlAffinity.trailing,
+          title: CustomText(
+              text: 'Please send me news and offers from Spotify.',
+              fontSize: 10,
+              textColor: AppColors.whiteColor),
+          value: false,
+          groupValue: false,
+          onChanged: onPP1Changed,
+        ),
+        RadioListTile.adaptive(
+            controlAffinity: ListTileControlAffinity.trailing,
+            title: CustomText(
+                text:
+                    'Share my registration data with Spotify’s content providers for marketing purposes.',
+                fontSize: 10,
+                textColor: AppColors.whiteColor),
+            value: false,
+            groupValue: false,
+            onChanged: onPP2Changed),
+        
       ],
     );

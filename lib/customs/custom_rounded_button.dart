@@ -18,7 +18,7 @@ class CustomRoundedButton extends StatelessWidget {
       required this.onTap,
       required this.text,
       this.mWidth = 300,
-      this.mHeight = 50,
+      this.mHeight = 40,
       this.bgColor = Colors.white,
       this.iconImage,
       this.textColor = Colors.black,

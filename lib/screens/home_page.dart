@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Stack(
           children: [
-            Image.asset('assets/images/background.png'),
+            Image.asset('assets/images/others/background.png'),
             Container(
               height: double.infinity,
               width: double.infinity,
