@@ -20,15 +20,38 @@ class ChoosePodcasts extends StatefulWidget {
 }
 
 class _ChoosePodcastsState extends State<ChoosePodcasts> {
-  List<int> selectedPodcasts = [];
   List<List<PodcastModel>> podcasts = [
     [
       PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
+          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh", isBlackBg: true, isSpotifyOriginal: true),
       PodcastModel(
           imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
       PodcastModel(
-          imgPath: "assets/images/singers/asha.jpg", podcast: "More in Crime"),
+          podcast: "More in Crime"),
+    ],
+    [
+      PodcastModel(
+          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh", ),
+      PodcastModel(
+          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik", isBlackBg: false, isSpotifyOriginal: true),
+      PodcastModel(
+          podcast: "More in Crime", isBlackBg: true, isSpotifyOriginal: true),
+    ],
+    [
+      PodcastModel(
+          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh", isBlackBg: true, isSpotifyOriginal: true),
+      PodcastModel(
+          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik",),
+      PodcastModel(
+          podcast: "More in Crime"),
+    ],
+    [
+      PodcastModel(
+          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
+      PodcastModel(
+          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik", isBlackBg: true, isSpotifyOriginal: true),
+      PodcastModel(
+          podcast: "More in Crime"),
     ],
     [
       PodcastModel(
@@ -36,7 +59,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
       PodcastModel(
           imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
       PodcastModel(
-          imgPath: "assets/images/singers/asha.jpg", podcast: "More in Crime"),
+          podcast: "More in Crime"),
     ],
     [
       PodcastModel(
@@ -44,31 +67,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
       PodcastModel(
           imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
       PodcastModel(
-          imgPath: "assets/images/singers/asha.jpg", podcast: "More in Crime"),
-    ],
-    [
-      PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
-      PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(
-          imgPath: "assets/images/singers/asha.jpg", podcast: "More in Crime"),
-    ],
-    [
-      PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
-      PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(
-          imgPath: "assets/images/singers/asha.jpg", podcast: "More in Crime"),
-    ],
-    [
-      PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
-      PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(
-          imgPath: "assets/images/singers/asha.jpg", podcast: "More in Crime"),
+          podcast: "More in Crime"),
     ],
     // Add more lists as needed
   ];
@@ -157,9 +156,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
                                             mHeight: 120,
                                             mWidth: 120,
                                             imgPath: podcasts[index][childIndex]
-                                                .imgPath,
-                                            isSelected: selectedPodcasts
-                                                .contains(childIndex),
+                                                .imgPath, isBlackBg: podcasts[index][childIndex].isBlackBg, isSpotifyOriginal: podcasts[index][childIndex].isSpotifyOriginal,
                                           ),
                                           customSizedBox(mHeight: 5),
                                           CustomText(
@@ -188,21 +185,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
                               Colors.transparent,
                               AppColors.darkBlackColor.withOpacity(0.5)
                             ])),
-                    child: selectedPodcasts.length >= 3
-                        ? Center(
-                            child: Padding(
-                            padding: const EdgeInsets.only(top: 150.0),
-                            child: CustomRoundedButton(
-                              mWidth: 80,
-                              fontSize: 18,
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, AppRoutes.choose_podcasts);
-                              },
-                              text: 'Next',
-                            ),
-                          ))
-                        : null,
+                            child: Center(child: CustomRoundedButton(onTap: (){}, text: 'Done', mWidth: 100, mHeight: 45, fontSize: 16,)),
                   ),
                 )
               ]),
