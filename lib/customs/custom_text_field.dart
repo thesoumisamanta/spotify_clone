@@ -32,6 +32,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.zero,
         filled: true,
         fillColor: bgColor,
           border: OutlineInputBorder(

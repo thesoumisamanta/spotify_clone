@@ -58,8 +58,11 @@ class _SignupPageState extends State<SignupPage> {
             },
             child: Padding(
               padding: const EdgeInsets.all(14.0),
-              child: SvgPicture.asset(
-                "assets/icons/dark_mode/Left.svg",
+              child: CircleAvatar(
+                backgroundColor: Colors.black,
+                child: SvgPicture.asset(
+                  "assets/icons/dark_mode/Left.svg",
+                ),
               ),
             ),
           ),
