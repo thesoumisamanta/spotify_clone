@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/customs/custom_text_field.dart';
 import 'package:spotify_clone/customs/ui_helpers.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
+import 'package:spotify_clone/domain/app_routes.dart';
 import 'package:spotify_clone/models/singers_model.dart';
 
 class ChooseArtists extends StatefulWidget {
@@ -81,7 +82,7 @@ class _ChooseArtistsState extends State<ChooseArtists> {
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: CircleAvatar(
-                backgroundColor: Colors.black,
+                  backgroundColor: Colors.black,
                   child: SvgPicture.asset('assets/icons/dark_mode/Left.svg')),
             ),
             onTap: () => Navigator.pop(context),
@@ -169,14 +170,17 @@ class _ChooseArtistsState extends State<ChooseArtists> {
                     child: selectedSingers.length >= 3
                         ? Center(
                             child: Padding(
-                              padding: const EdgeInsets.only(top: 150.0),
-                              child: CustomRoundedButton(
+                            padding: const EdgeInsets.only(top: 150.0),
+                            child: CustomRoundedButton(
                               mWidth: 80,
                               fontSize: 18,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, AppRoutes.choose_podcasts);
+                              },
                               text: 'Next',
-                                                        ),
-                            ))
+                            ),
+                          ))
                         : null,
                   ),
                 )
