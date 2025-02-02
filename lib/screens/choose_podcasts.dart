@@ -9,8 +9,8 @@ import 'package:spotify_clone/customs/custom_text.dart';
 import 'package:spotify_clone/customs/custom_text_field.dart';
 import 'package:spotify_clone/customs/ui_helpers.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
-import 'package:spotify_clone/domain/app_routes.dart';
-import 'package:spotify_clone/models/podcast_model.dart';
+import 'package:spotify_clone/models/cards_model.dart';
+
 import 'package:spotify_clone/screens/home_page.dart';
 
 class ChoosePodcasts extends StatefulWidget {
@@ -21,74 +21,68 @@ class ChoosePodcasts extends StatefulWidget {
 }
 
 class _ChoosePodcastsState extends State<ChoosePodcasts> {
-  List<List<PodcastModel>> podcasts = [
+  List<List<CardsModel>> textNames = [
     [
-      PodcastModel(
+      CardsModel(
           imgPath: "assets/images/singers/arijit.jpg",
-          podcast: "Arijit Singh",
+          textName: "Arijit Singh",
           isBlackBg: true,
           isSpotifyOriginal: true),
-      PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(podcast: "More in Crime"),
+      CardsModel(
+          imgPath: "assets/images/singers/alka.png", textName: "Alka Yagnik"),
+      CardsModel(imgPath: "assets/images/singers/alka.png", textName: "More in Crime"),
     ],
     [
-      PodcastModel(
+      CardsModel(
         imgPath: "assets/images/singers/arijit.jpg",
-        podcast: "Arijit Singh",
+        textName: "Arijit Singh",
       ),
-      PodcastModel(
+      CardsModel(
           imgPath: "assets/images/singers/alka.png",
-          podcast: "Alka Yagnik",
+          textName: "Alka Yagnik",
           isBlackBg: false,
           isSpotifyOriginal: true),
-      PodcastModel(
-          podcast: "More in Crime", isBlackBg: true, isSpotifyOriginal: true),
+      CardsModel(imgPath: "assets/images/singers/alka.png", 
+          textName: "More in Crime", isBlackBg: true, isSpotifyOriginal: true),
     ],
     [
-      PodcastModel(
+      CardsModel(
           imgPath: "assets/images/singers/arijit.jpg",
-          podcast: "Arijit Singh",
+          textName: "Arijit Singh",
           isBlackBg: true,
           isSpotifyOriginal: true),
-      PodcastModel(
+      CardsModel(
         imgPath: "assets/images/singers/alka.png",
-        podcast: "Alka Yagnik",
+        textName: "Alka Yagnik",
       ),
-      PodcastModel(podcast: "More in Crime"),
+      CardsModel(imgPath: "assets/images/singers/alka.png", textName: "More in Crime"),
     ],
     [
-      PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
-      PodcastModel(
+      CardsModel(
+          imgPath: "assets/images/singers/arijit.jpg", textName: "Arijit Singh"),
+      CardsModel(
           imgPath: "assets/images/singers/alka.png",
-          podcast: "Alka Yagnik",
+          textName: "Alka Yagnik",
           isBlackBg: true,
           isSpotifyOriginal: true),
-      PodcastModel(podcast: "More in Crime"),
+      CardsModel(imgPath: "assets/images/singers/alka.png", textName: "More in Crime"),
     ],
     [
-      PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
-      PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(podcast: "More in Crime"),
+      CardsModel(
+          imgPath: "assets/images/singers/arijit.jpg", textName: "Arijit Singh"),
+      CardsModel(
+          imgPath: "assets/images/singers/alka.png", textName: "Alka Yagnik"),
+      CardsModel(imgPath: "assets/images/singers/alka.png", textName: "More in Crime"),
     ],
     [
-      PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
-      PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(podcast: "More in Crime"),
+      CardsModel(
+          imgPath: "assets/images/singers/arijit.jpg", textName: "Arijit Singh"),
+      CardsModel(
+          imgPath: "assets/images/singers/alka.png", textName: "Alka Yagnik"),
+      CardsModel(imgPath: "assets/images/singers/alka.png", textName: "More in Crime"),
     ],
     // Add more lists as needed
   ];
-
-  List<List<Map<String, dynamic>>> getPodcastsAsMap() {
-    return podcasts
-        .map((list) => list.map((model) => model.toMap()).toList())
-        .toList();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +96,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
               children: [
                 customSizedBox(mHeight: 20),
                 CustomText(
-                    text: 'Now choose some\npodcasts.',
+                    text: 'Now choose some\ntextNames.',
                     fontSize: 25,
                     textColor: AppColors.whiteColor),
                 customSizedBox(mHeight: 10),
@@ -127,7 +121,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
             Expanded(
               child: Stack(children: [
                 ListView.builder(
-                    itemCount: podcasts.length,
+                    itemCount: textNames.length,
                     itemBuilder: (_, index) {
                       return Container(
                         padding: EdgeInsets.only(bottom: 12),
@@ -135,7 +129,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
                         child: ListView.builder(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
-                            itemCount: podcasts[index].length,
+                            itemCount: textNames[index].length,
                             itemBuilder: (_, childIndex) {
                               return Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
@@ -153,7 +147,7 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
                                                         1)]),
                                         child: Center(
                                           child: Text(
-                                            podcasts[index][childIndex].podcast,
+                                            textNames[index][childIndex].textName,
                                             style: TextStyle(
                                               color: AppColors.whiteColor,
                                               fontWeight: FontWeight.bold,
@@ -167,19 +161,19 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
                                           CustomRoundedSquareBg(
                                             mHeight: 120,
                                             mWidth: 120,
-                                            imgPath: podcasts[index][childIndex]
+                                            imgPath: textNames[index][childIndex]
                                                 .imgPath,
-                                            isBlackBg: podcasts[index]
+                                            isBlackBg: textNames[index]
                                                     [childIndex]
                                                 .isBlackBg,
-                                            isSpotifyOriginal: podcasts[index]
+                                            isSpotifyOriginal: textNames[index]
                                                     [childIndex]
                                                 .isSpotifyOriginal,
                                           ),
                                           customSizedBox(mHeight: 5),
                                           CustomText(
-                                            text: podcasts[index][childIndex]
-                                                .podcast,
+                                            text: textNames[index][childIndex]
+                                                .textName,
                                             fontSize: 10,
                                             textColor: AppColors.whiteColor,
                                           ),

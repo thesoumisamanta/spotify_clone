@@ -7,7 +7,7 @@ import 'package:spotify_clone/customs/custom_text_field.dart';
 import 'package:spotify_clone/customs/ui_helpers.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
 import 'package:spotify_clone/domain/app_routes.dart';
-import 'package:spotify_clone/models/singers_model.dart';
+import 'package:spotify_clone/models/cards_model.dart';
 
 class ChooseArtists extends StatefulWidget {
   @override
@@ -16,60 +16,60 @@ class ChooseArtists extends StatefulWidget {
 
 class _ChooseArtistsState extends State<ChooseArtists> {
   List<int> selectedSingers = [];
-  final List<SingersModel> singers = [
-    SingersModel(
+  final List<CardsModel> singers = [
+    CardsModel(
         imgPath: "assets/images/singers/arijit.jpg",
-        singerName: "Arijit Singh"),
-    SingersModel(
-        imgPath: "assets/images/singers/alka.png", singerName: "Alka Yagnik"),
-    SingersModel(
+        textName: "Arijit Singh"),
+    CardsModel(
+        imgPath: "assets/images/singers/alka.png", textName: "Alka Yagnik"),
+    CardsModel(
         imgPath: "assets/images/singers/arijit.jpg",
-        singerName: "Arijit Singh"),
-    SingersModel(
-        imgPath: "assets/images/singers/asha.jpg", singerName: "Asha Bhosle"),
-    SingersModel(
+        textName: "Arijit Singh"),
+    CardsModel(
+        imgPath: "assets/images/singers/asha.jpg", textName: "Asha Bhosle"),
+    CardsModel(
         imgPath: "assets/images/singers/kishor.webp",
-        singerName: "Kishore Kumar"),
-    SingersModel(
+        textName: "Kishore Kumar"),
+    CardsModel(
         imgPath: "assets/images/singers/lata.jpg",
-        singerName: "Lata Mangeshkar"),
-    SingersModel(
+        textName: "Lata Mangeshkar"),
+    CardsModel(
         imgPath: "assets/images/singers/mohammed.jpg",
-        singerName: "Mohammed Rafi"),
-    SingersModel(
+        textName: "Mohammed Rafi"),
+    CardsModel(
         imgPath: "assets/images/singers/shreya.jpg",
-        singerName: "Shreya Ghoshal"),
-    SingersModel(
-        imgPath: "assets/images/singers/sonu.avif", singerName: "Sonu Nigam"),
-    SingersModel(
-        imgPath: "assets/images/singers/udit.webp", singerName: "Udit Narayan"),
-    SingersModel(
+        textName: "Shreya Ghoshal"),
+    CardsModel(
+        imgPath: "assets/images/singers/sonu.avif", textName: "Sonu Nigam"),
+    CardsModel(
+        imgPath: "assets/images/singers/udit.webp", textName: "Udit Narayan"),
+    CardsModel(
         imgPath: "assets/images/singers/sunidhi.avif",
-        singerName: "Sunidhi Chauhan"),
-    SingersModel(
+        textName: "Sunidhi Chauhan"),
+    CardsModel(
         imgPath: "assets/images/singers/arijit.jpg",
-        singerName: "Arijit Singh"),
-    SingersModel(
-        imgPath: "assets/images/singers/asha.jpg", singerName: "Asha Bhosle"),
-    SingersModel(
+        textName: "Arijit Singh"),
+    CardsModel(
+        imgPath: "assets/images/singers/asha.jpg", textName: "Asha Bhosle"),
+    CardsModel(
         imgPath: "assets/images/singers/kishor.webp",
-        singerName: "Kishore Kumar"),
-    SingersModel(
+        textName: "Kishore Kumar"),
+    CardsModel(
         imgPath: "assets/images/singers/lata.jpg",
-        singerName: "Lata Mangeshkar"),
-    SingersModel(
+        textName: "Lata Mangeshkar"),
+    CardsModel(
         imgPath: "assets/images/singers/mohammed.jpg",
-        singerName: "Mohammed Rafi"),
-    SingersModel(
+        textName: "Mohammed Rafi"),
+    CardsModel(
         imgPath: "assets/images/singers/shreya.jpg",
-        singerName: "Shreya Ghoshal"),
-    SingersModel(
-        imgPath: "assets/images/singers/sonu.avif", singerName: "Sonu Nigam"),
-    SingersModel(
-        imgPath: "assets/images/singers/udit.webp", singerName: "Udit Narayan"),
-    SingersModel(
+        textName: "Shreya Ghoshal"),
+    CardsModel(
+        imgPath: "assets/images/singers/sonu.avif", textName: "Sonu Nigam"),
+    CardsModel(
+        imgPath: "assets/images/singers/udit.webp", textName: "Udit Narayan"),
+    CardsModel(
         imgPath: "assets/images/singers/sunidhi.avif",
-        singerName: "Sunidhi Chauhan"),
+        textName: "Sunidhi Chauhan"),
   ];
 
   @override
@@ -143,7 +143,7 @@ class _ChooseArtistsState extends State<ChooseArtists> {
                             ),
                             customSizedBox(mHeight: 5),
                             CustomText(
-                              text: singers[index].singerName,
+                              text: singers[index].textName,
                               fontSize: 10,
                               textColor: AppColors.whiteColor,
                             ),

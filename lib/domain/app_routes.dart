@@ -19,7 +19,7 @@ class AppRoutes {
         start_page: (context) => StartPage(),
         signUp_page: (context) => SignupPage(),
         choose_artists: (context) => ChooseArtists(),
-        choose_podcasts: (context) => ChoosePodcasts(),
+        choose_podcasts: (context) => const ChoosePodcasts(),
         home_page: (context) => HomePage(),
       };
 }
