@@ -11,6 +11,7 @@ import 'package:spotify_clone/customs/ui_helpers.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
 import 'package:spotify_clone/domain/app_routes.dart';
 import 'package:spotify_clone/models/podcast_model.dart';
+import 'package:spotify_clone/screens/home_page.dart';
 
 class ChoosePodcasts extends StatefulWidget {
   const ChoosePodcasts({super.key});
@@ -23,51 +24,62 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
   List<List<PodcastModel>> podcasts = [
     [
       PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh", isBlackBg: true, isSpotifyOriginal: true),
+          imgPath: "assets/images/singers/arijit.jpg",
+          podcast: "Arijit Singh",
+          isBlackBg: true,
+          isSpotifyOriginal: true),
       PodcastModel(
           imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(
-          podcast: "More in Crime"),
+      PodcastModel(podcast: "More in Crime"),
     ],
     [
       PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh", ),
+        imgPath: "assets/images/singers/arijit.jpg",
+        podcast: "Arijit Singh",
+      ),
       PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik", isBlackBg: false, isSpotifyOriginal: true),
+          imgPath: "assets/images/singers/alka.png",
+          podcast: "Alka Yagnik",
+          isBlackBg: false,
+          isSpotifyOriginal: true),
       PodcastModel(
           podcast: "More in Crime", isBlackBg: true, isSpotifyOriginal: true),
     ],
     [
       PodcastModel(
-          imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh", isBlackBg: true, isSpotifyOriginal: true),
+          imgPath: "assets/images/singers/arijit.jpg",
+          podcast: "Arijit Singh",
+          isBlackBg: true,
+          isSpotifyOriginal: true),
       PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik",),
-      PodcastModel(
-          podcast: "More in Crime"),
+        imgPath: "assets/images/singers/alka.png",
+        podcast: "Alka Yagnik",
+      ),
+      PodcastModel(podcast: "More in Crime"),
     ],
     [
       PodcastModel(
           imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
       PodcastModel(
-          imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik", isBlackBg: true, isSpotifyOriginal: true),
-      PodcastModel(
-          podcast: "More in Crime"),
+          imgPath: "assets/images/singers/alka.png",
+          podcast: "Alka Yagnik",
+          isBlackBg: true,
+          isSpotifyOriginal: true),
+      PodcastModel(podcast: "More in Crime"),
     ],
     [
       PodcastModel(
           imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
       PodcastModel(
           imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(
-          podcast: "More in Crime"),
+      PodcastModel(podcast: "More in Crime"),
     ],
     [
       PodcastModel(
           imgPath: "assets/images/singers/arijit.jpg", podcast: "Arijit Singh"),
       PodcastModel(
           imgPath: "assets/images/singers/alka.png", podcast: "Alka Yagnik"),
-      PodcastModel(
-          podcast: "More in Crime"),
+      PodcastModel(podcast: "More in Crime"),
     ],
     // Add more lists as needed
   ];
@@ -156,7 +168,13 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
                                             mHeight: 120,
                                             mWidth: 120,
                                             imgPath: podcasts[index][childIndex]
-                                                .imgPath, isBlackBg: podcasts[index][childIndex].isBlackBg, isSpotifyOriginal: podcasts[index][childIndex].isSpotifyOriginal,
+                                                .imgPath,
+                                            isBlackBg: podcasts[index]
+                                                    [childIndex]
+                                                .isBlackBg,
+                                            isSpotifyOriginal: podcasts[index]
+                                                    [childIndex]
+                                                .isSpotifyOriginal,
                                           ),
                                           customSizedBox(mHeight: 5),
                                           CustomText(
@@ -185,7 +203,19 @@ class _ChoosePodcastsState extends State<ChoosePodcasts> {
                               Colors.transparent,
                               AppColors.darkBlackColor.withOpacity(0.5)
                             ])),
-                            child: Center(child: CustomRoundedButton(onTap: (){}, text: 'Done', mWidth: 100, mHeight: 45, fontSize: 16,)),
+                    child: Center(
+                        child: CustomRoundedButton(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      },
+                      text: 'Done',
+                      mWidth: 100,
+                      mHeight: 45,
+                      fontSize: 16,
+                    )),
                   ),
                 )
               ]),

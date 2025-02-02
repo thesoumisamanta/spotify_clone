@@ -20,7 +20,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     super.initState();
     animate();
     Timer(Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, AppRoutes.home_page);
+      Navigator.pushReplacementNamed(context, AppRoutes.start_page);
     });
   }
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/domain/app_colors.dart';
 
 class CustomTextButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -8,7 +7,7 @@ class CustomTextButton extends StatelessWidget {
   final FontWeight fontWeight;
   final double fontSize;
 
-  CustomTextButton({
+  const CustomTextButton({super.key, 
     required this.onPressed,
     required this.text,
     required this.fontSize,

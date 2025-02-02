@@ -3,17 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
 
 class CustomRoundedButton extends StatelessWidget {
-  VoidCallback onTap;
-  double mWidth;
-  double mHeight;
-  Color bgColor;
-  String text;
-  String? iconImage;
-  Color textColor;
-  bool isOutlined;
-  double fontSize;
+  final VoidCallback onTap;
+  final double mWidth;
+  final double mHeight;
+  final Color bgColor;
+  final String text;
+  final String? iconImage;
+  final Color textColor;
+  final bool isOutlined;
+  final double fontSize;
 
-  CustomRoundedButton(
+  const CustomRoundedButton(
       {super.key,
       required this.onTap,
       required this.text,

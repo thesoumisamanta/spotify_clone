@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
 
 class CustomCircularBg extends StatelessWidget {
-  double mHeight;
-  double mWidth;
-  String imgPath;
-  bool isSelected;
+  final double mHeight;
+  final double mWidth;
+  final String imgPath;
+  final bool isSelected;
 
-  CustomCircularBg({
+  const CustomCircularBg({super.key, 
     this.mWidth = 100,
     this.mHeight = 100,
     required this.imgPath,

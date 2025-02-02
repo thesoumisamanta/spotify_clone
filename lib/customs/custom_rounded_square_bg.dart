@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/domain/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomRoundedSquareBg extends StatelessWidget {
