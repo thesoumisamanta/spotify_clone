@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.darkBlackColor,
+      body: bottomBar[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
           selectedLabelStyle: TextStyle(color: AppColors.whiteColor),
           unselectedLabelStyle: TextStyle(color: AppColors.greyColor),
@@ -43,12 +44,13 @@ class _HomePageState extends State<HomePage> {
                 ),
                 label: 'Home'),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/icons/dark_mode/Search_outline.svg',
-                  height: 20,
-                  width: 20,
-                ),
-                label: 'Search'),
+              icon: SvgPicture.asset(
+                'assets/icons/dark_mode/Search_outline.svg',
+                height: 20,
+                width: 20,
+              ),
+              label: 'Search',
+            ),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/dark_mode/Library_outline.svg',
