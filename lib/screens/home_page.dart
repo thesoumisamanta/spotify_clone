@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/customs/custom_text.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/widgets/home_bottom_bar.dart';
@@ -21,8 +20,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       backgroundColor: AppColors.darkBlackColor,
-      body: bottomBar[selectedIndex],
+      body: Stack(
+        children: [
+          bottomBar[selectedIndex],
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 60,
+              color: Color(0xFF550A1C),
+            ))
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
           selectedLabelStyle: TextStyle(color: AppColors.whiteColor),
           unselectedLabelStyle: TextStyle(color: AppColors.greyColor),

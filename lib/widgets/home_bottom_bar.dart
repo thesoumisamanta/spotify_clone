@@ -10,14 +10,24 @@ class HomeBottomBar extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.darkBlackColor,
-        body: Column(
-          children: [
-            recentlyPlayedWidget(),
-            customSizedBox(),
-            recentlyPlayedFrame(),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              recentlyPlayedWidget(),
+              customSizedBox(),
+              recentlyPlayedFrame(),
+              reviewList(),
+              customSizedBox(),
+              topSongsWidget(),
+              customSizedBox(),
+              editorsPicksWidget(),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
+
