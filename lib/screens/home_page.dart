@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/customs/custom_players_widget.dart';
 import 'package:spotify_clone/domain/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_clone/models/music_player_model.dart';
 import 'package:spotify_clone/widgets/home_bottom_bar.dart';
 import 'package:spotify_clone/widgets/library_bottom_bar.dart';
 import 'package:spotify_clone/widgets/search_bottom_bar.dart';
@@ -25,12 +27,20 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           bottomBar[selectedIndex],
-          Align(
+            Align(
             alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 60,
-              color: Color(0xFF550A1C),
-            ))
+            child: CustomPlayersWidget(
+              musicPlayerModel: MusicPlayerModel(
+              albumTitle: 'The Beatles',
+              songTitle: 'From Me to You - Mono / Remastered',
+              thumbnailpath: 'assets/images/others/A1.png',
+              isBluetooth: true,
+              bluetoothName: 'BEATSPILL+',
+              mHeight: 60,
+              bgColor: Color(0xFF550A1C),
+              ),
+            ),
+            )
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

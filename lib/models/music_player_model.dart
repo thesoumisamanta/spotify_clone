@@ -5,7 +5,7 @@ class MusicPlayerModel {
   final String songTitle;
   final String thumbnailpath;
   bool isBluetooth;
-  final String isBluetoothName;
+  final String bluetoothName;
   double mHeight;
   Color bgColor;
 
@@ -15,6 +15,6 @@ class MusicPlayerModel {
       required this.thumbnailpath,
       required this.bgColor,
       this.isBluetooth = false,
-      this.isBluetoothName = '',
+      this.bluetoothName = '',
       this.mHeight = 60});
 }
