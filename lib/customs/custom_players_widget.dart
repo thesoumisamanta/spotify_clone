@@ -16,45 +16,71 @@ class CustomPlayersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: musicPlayerModel.mHeight,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.0),
-          color: musicPlayerModel.bgColor),
-      child: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.0),
-                      image: DecorationImage(
-                          image: AssetImage(musicPlayerModel.thumbnailpath))),
-                ),
-                Expanded(child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                  Row(
-                    children: [
-                      CustomText(text: musicPlayerModel.songTitle, fontSize: 10, textColor: AppColors.whiteColor),
-                      Expanded(child: CustomText(text: musicPlayerModel.albumTitle, fontSize: 10, textColor: AppColors.whiteColor, overflow: TextOverflow.fade,)),
-                      customSizedBox(),
-                      musicPlayerModel.isBluetooth 
-                          ? SvgPicture.asset('assets/icon/dark_mode/bluetooth.svg') 
-                          : Icon(Icons.devices, color: AppColors.greenColor,),
-                          customSizedBox(),
-                          SvgPicture.asset('assets/icons/dark_mode/Ellipse 2.svg')
-                    ],
-                  )
-                ],))
-              ],
-            )
-          ],
+    return Padding(
+      padding: EdgeInsets.only(left: 7, right: 7),
+      child: Container(
+        height: musicPlayerModel.mHeight,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.0),
+            color: musicPlayerModel.bgColor),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 37,
+                    height: 37,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.0),
+                        image: DecorationImage(
+                            image: AssetImage(musicPlayerModel.thumbnailpath))),
+                  ),
+                  customSizedBox(),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CustomText(
+                              text: musicPlayerModel.songTitle,
+                              fontSize: 11,
+                              textColor: AppColors.whiteColor,
+                            ),
+                            CustomText(
+                              text: musicPlayerModel.albumTitle,
+                              fontSize: 9,
+                              textColor: AppColors.whiteColor,
+                            ),
+                          ],
+                        ),
+                        
+                        musicPlayerModel.isBluetooth ? Row(
+                          children: [
+                            SvgPicture.asset('assets/icons/dark_mode/bluetooth.svg', height: 15, width: 15,),
+                            CustomText(text: musicPlayerModel.bluetoothName, fontSize: 9, textColor: AppColors.greenColor),
+                          ],
+                        ) : Container()
+                      ],
+                    ),
+                  ),
+                  customSizedBox(),
+                  musicPlayerModel.isBluetooth ? SvgPicture.asset('assets/icons/dark_mode/bluetooth.svg', height: 29, width: 29,) : Icon(Icons.devices, color: AppColors.greenColor,),
+                  Icon(Icons.pause, color: AppColors.whiteColor, size: 28,)
+                ],
+              ),
+              LinearProgressIndicator(
+                value: 0.4,
+                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFB2B2B2)),
+                backgroundColor: const Color(0xFF702F3D),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ],
+          ),
         ),
       ),
     );

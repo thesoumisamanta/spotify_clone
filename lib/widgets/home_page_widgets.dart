@@ -162,7 +162,7 @@ Widget editorsPicksWidget() {
             itemCount: editorPicks.length,
             itemBuilder: (_, index) {
               return Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   children: [
                     Image.asset(editorPicks[index].imgPath, height: 155, width: 155,),
