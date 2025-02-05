@@ -11,7 +11,7 @@ class StartPage extends StatelessWidget {
       body: Center(
         child: Stack(
           children: [
-            Image.asset('assets/images/others/background.png'),
+            Image.asset('assets/images/others/bg.png'),
             Container(
               height: double.infinity,
               width: double.infinity,

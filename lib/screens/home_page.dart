@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
               musicPlayerModel: MusicPlayerModel(
               albumTitle: 'The Beatles',
               songTitle: 'From Me to You - Mono / Remastered',
-              thumbnailpath: 'assets/images/others/A1.png',
+              thumbnailpath: 'assets/images/others/artist_reavealed.png',
               isBluetooth: true,
               bluetoothName: 'BEATSPILL+',
               mHeight: 60,
